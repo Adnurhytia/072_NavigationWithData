@@ -19,6 +19,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import com.example.dumdumteaapp.R
 import com.example.dumdumteaapp.data.OrderUIState
 import com.example.dumdumteaapp.ui.komponen.FormatLabelHarga
 
@@ -39,22 +40,22 @@ fun HalamanDua(
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         Column(
-            modifier = Modifier
-                .padding(dimensionResource(R.dimen.padding_medium)),
-            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
+            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
+            verticalArrangement = Arrangement.spacedBy(
+                dimensionResource(R.dimen.padding_small)
+            )
         ) {
-            items.forEach{items ->
+            items.forEach { item ->
                 Column {
-                    Text(items.first.uppercase())
-                    Text(text = items.second.toString(),
-                        fontWeight = FontWeight.Bold
-                    )
+                    Text(item.first.toString().uppercase())
+                    Text(text = item.second.toString(), fontWeight = FontWeight.Bold)
                 }
                 Divider(thickness = dimensionResource(R.dimen.thickness_divider))
             }
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
-            FormatLabelHarga(subtotal = orderUIState.harga,
-                modifier= Modifier.align(Alignment.End)
+            FormatLabelHarga(
+                subtotal = orderUIState.harga,
+                modifier = Modifier.align(Alignment.End)
             )
         }
         Row (
@@ -65,13 +66,15 @@ fun HalamanDua(
             Column(
                 verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
             ) {
-               Button(modifier = Modifier.fillMaxWidth(),
+               Button(
+                   modifier = Modifier.fillMaxWidth(),
                    onClick = {}
                ) {
                    Text(stringResource(R.string.send))
                }
-                OutlinedButton(modifier = Modifier.fillMaxWidth(),
-                    onClick = {}
+                OutlinedButton(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = onCancelButtonClicked
                 ) {
                     Text(stringResource(R.string.cancel))
                 }

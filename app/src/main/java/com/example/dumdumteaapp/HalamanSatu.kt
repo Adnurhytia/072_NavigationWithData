@@ -63,8 +63,9 @@ fun HalamanSatu(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     RadioButton(selected = rasaYgDipilih == item,
-                        onClick = {rasaYgDipilih = item
-                        onSelectionChanged(item)
+                        onClick = {
+                            rasaYgDipilih = item
+                            onSelectionChanged(item)
                         }
                     )
                     Text(item)
@@ -93,28 +94,35 @@ fun HalamanSatu(
                     },
                     onValueChange = {textJmlBeli = it}
                 )
-                Button(onClick = {onConfirmButtonClicked(textJmlBeli.toInt())}) {
+                Button(onClick = {onConfirmButtonClicked(textJmlBeli.toInt())},
+                    enabled = textJmlBeli.isNotEmpty()) {
                     Text(stringResource(R.string.confirm))
                 }
                 Divider(
                     thickness = dimensionResource(R.dimen.thickness_divider),
                     modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium))
                 )
-                Row (
-                    modifier= Modifier
-                        .fillMaxWidth()
-                        .padding(dimensionResource(R.dimen.padding_medium))
-                        .weight(1f, false),
-                    horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
-                    verticalAlignment = Alignment.Bottom
+
+            }
+            Row (
+                modifier= Modifier
+                    .fillMaxWidth()
+                    .padding(dimensionResource(R.dimen.padding_medium))
+                    .weight(1f, false),
+                horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+                verticalAlignment = Alignment.Bottom
+            ){
+                OutlinedButton(
+                    modifier = Modifier.weight(1f),
+                    onClick = onCancelButtonClicked) {
+                    Text(stringResource(R.string.cancel))
+                }
+                Button(
+                    modifier = Modifier.weight(1f),
+                    enabled = textJmlBeli.isNotEmpty(),
+                    onClick = onNextButtonClicked
                 ){
-                    OutlinedButton(modifier = Modifier.weight(1f),
-                        enabled = textJmlBeli.isNotEmpty(),
-                        onClick = onNextButtonClicked)
-                    {
-                        Text(stringResource(R.string.next))
-                    }
-                    
+                    Text(stringResource(R.string.next   ))
                 }
             }
         }
