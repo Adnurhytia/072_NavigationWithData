@@ -36,6 +36,14 @@ enum class PengelolaHalaman {
 }
 
 @Composable
+fun ContactApp(
+    viewModel: OrderViewModel = viewModel(),
+    navController: NavHostController = rememberNavController()
+){
+
+}
+
+@Composable
 fun ThaiTeaAppBar(
     bisaNavigasiBack: Boolean,
     navigasiUp: () -> Unit,
