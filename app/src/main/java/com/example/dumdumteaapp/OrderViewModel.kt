@@ -1,5 +1,6 @@
 package com.example.dumdumteaapp
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.dumdumteaapp.data.OrderUIState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -35,5 +36,8 @@ class OrderViewModel : ViewModel(){
         val kalkulasiHarga = jumlah * HARGA_PER_CUP
 
         return NumberFormat.getNumberInstance().format(kalkulasiHarga)
+    }
+    fun setContact(listData: MutableList<String>){
+
     }
 }
