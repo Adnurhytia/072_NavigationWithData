@@ -30,7 +30,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 enum class PengelolaHalaman {
     Home,
     Rasa,
-    Summary
+    Summary,
+    Formulir,
+    Detail
 }
 
 @Composable
