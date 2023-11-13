@@ -31,7 +31,7 @@ fun HalamanDua(
     modifier: Modifier = Modifier
 ){
     val items = listOf(
-        Pair(stringArrayResource(R.string.quantity), orderUIState.jumlah),
+        Pair(stringResource(R.string.quantity), orderUIState.jumlah),
         Pair(stringResource(R.string.flavor), orderUIState.rasa)
 
     )

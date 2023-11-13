@@ -98,12 +98,13 @@ fun HalamanSatu(
                     enabled = textJmlBeli.isNotEmpty()) {
                     Text(stringResource(R.string.confirm))
                 }
-                Divider(
-                    thickness = dimensionResource(R.dimen.thickness_divider),
-                    modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium))
-                )
+
 
             }
+            Divider(
+                thickness = dimensionResource(R.dimen.thickness_divider),
+                modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium))
+            )
             Row (
                 modifier= Modifier
                     .fillMaxWidth()
