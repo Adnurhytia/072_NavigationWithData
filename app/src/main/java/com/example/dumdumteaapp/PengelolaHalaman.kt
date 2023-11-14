@@ -32,7 +32,6 @@ enum class PengelolaHalaman {
     Rasa,
     Summary,
     Formulir,
-    Detail
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -86,14 +85,14 @@ fun DumDumTeaApp(
             composable(route = PengelolaHalaman.Home.name){
                 HalamanHome(
                     onNextButtonClicked = {
-                        navController.navigate(PengelolaHalaman.Rasa.name)
+                        navController.navigate(PengelolaHalaman.Formulir.name)
                     }
                 )
             }
             composable(route= PengelolaHalaman.Formulir.name){
                 HalamanLogin(onSubmitButtonClick = {
                     viewModel.setContact(it)
-                    navController.navigate(PengelolaHalaman.Detail.name)
+                    navController.navigate(PengelolaHalaman.Rasa.name)
                 })
             }
             composable(route = PengelolaHalaman.Rasa.name){

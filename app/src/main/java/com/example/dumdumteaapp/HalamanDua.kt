@@ -36,7 +36,9 @@ fun HalamanDua(
 
     )
     val contact = listOf(
-        Pair(stringResource("Nama"))
+        Pair(stringResource(R.string.nama), orderUIState.nama),
+        Pair(stringResource(R.string.alamat), orderUIState.alamat),
+        Pair(stringResource(R.string.kontak), orderUIState.noTelp)
     )
 
     Column(
@@ -49,6 +51,13 @@ fun HalamanDua(
                 dimensionResource(R.dimen.padding_small)
             )
         ) {
+            contact.forEach{item ->
+                Column {
+                    Text(item.first.toString().uppercase())
+                    Text(text = item.second.toString())
+                }
+                Divider(thickness = dimensionResource(R.dimen.thickness_divider ))
+            }
             items.forEach { item ->
                 Column {
                     Text(item.first.toString().uppercase())
