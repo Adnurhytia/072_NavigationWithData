@@ -35,14 +35,7 @@ enum class PengelolaHalaman {
     Detail
 }
 
-@Composable
-fun ContactApp(
-    viewModel: OrderViewModel = viewModel(),
-    navController: NavHostController = rememberNavController()
-){
-
-}
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ThaiTeaAppBar(
     bisaNavigasiBack: Boolean,
@@ -95,6 +88,9 @@ fun DumDumTeaApp(
                         navController.navigate(PengelolaHalaman.Rasa.name)
                     }
                 )
+            }
+            composable(route= PengelolaHalaman.Formulir.name){
+                HalamanLogin()
             }
             composable(route = PengelolaHalaman.Rasa.name){
                 val context = LocalContext.current
