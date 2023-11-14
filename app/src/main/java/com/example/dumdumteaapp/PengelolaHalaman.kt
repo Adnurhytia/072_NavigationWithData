@@ -90,7 +90,10 @@ fun DumDumTeaApp(
                 )
             }
             composable(route= PengelolaHalaman.Formulir.name){
-                HalamanLogin()
+                HalamanLogin(onSubmitButtonClick = {
+                    viewModel.setContact(it)
+                    navController.navigate(PengelolaHalaman.Detail.name)
+                })
             }
             composable(route = PengelolaHalaman.Rasa.name){
                 val context = LocalContext.current
