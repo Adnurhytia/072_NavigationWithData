@@ -35,6 +35,10 @@ fun HalamanDua(
         Pair(stringResource(R.string.flavor), orderUIState.rasa)
 
     )
+    val contact = listOf(
+        Pair(stringResource("Nama"))
+    )
+
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.SpaceBetween
